@@ -23,9 +23,27 @@ let smShtMain = <T>(x:T):T => {
     return x;
 };
 
+interface Iprice{
+    getPrice:(price:number)=>number;
+    getMarkUpPrice:(price:number,markup:number)=>number;
+}
+
+let price:Iprice = {
+    getPrice:function(price:number):number{
+        let resultNum = Number(Math.round(price * 100) / 100).toFixed(2);
+        return +resultNum;
+    },
+    getMarkUpPrice:function(price:number,markup:number):number{
+        let resultNum = Number(Math.round((price * markup) * 100) / 100).toFixed(2);
+        return +resultNum;
+    }
+};
+
+console.log(price.getPrice(2.99));
 
 console.log(smShtMain('return smsht Main'));
 console.log(smShtMain(1));
 console.log(calculator.appendHaven('give me money'));
 
 calculator.getThis();
+

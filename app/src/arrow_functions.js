@@ -3,7 +3,7 @@ System.register(['./Calculations'], function(exports_1, context_1) {
     var __moduleName = context_1 && context_1.id;
     var _this = this;
     var Calculations_1;
-    var calculator, smArrShtMain, smShtMain;
+    var calculator, smArrShtMain, smShtMain, price;
     return {
         setters:[
             function (Calculations_1_1) {
@@ -27,6 +27,17 @@ System.register(['./Calculations'], function(exports_1, context_1) {
                 console.log(_this);
                 return x;
             };
+            price = {
+                getPrice: function (price) {
+                    var resultNum = Number(Math.round(price * 100) / 100).toFixed(2);
+                    return +resultNum;
+                },
+                getMarkUpPrice: function (price, markup) {
+                    var resultNum = Number(Math.round((price * markup) * 100) / 100).toFixed(2);
+                    return +resultNum;
+                }
+            };
+            console.log(price.getPrice(2.99));
             console.log(smShtMain('return smsht Main'));
             console.log(smShtMain(1));
             console.log(calculator.appendHaven('give me money'));

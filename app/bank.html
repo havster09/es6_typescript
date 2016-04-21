@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank</title>
+
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script src="../node_modules/systemjs/dist/system.js"></script>
+    <script src="../node_modules/typescript/lib/typescript.js"></script>
+    <script>
+        System.config({
+            transpiler: 'typescript',
+            packages: {
+                src: {
+                    defaultExtension: 'ts'
+                }
+            }
+        });
+        System
+                .import('src/bank')
+                .then(null, console.error.bind(console));
+    </script>
+</head>
+<body>
+<a href="#" id="smsht">Click</a>
+<button href="#" id="smshtty">Click</button>
+</body>
+</html>
+
